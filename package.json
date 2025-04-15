@@ -1,0 +1,17 @@
+{
+  "name": "algorithm-in-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:vespaiach/algorithm-in-nodejs.git"
+  },
+  "keywords": [],
+  "author": "Trinh Nguyen <nta.toan@gmail.com>",
+  "license": "MIT"
+}
