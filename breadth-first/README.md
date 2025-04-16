@@ -41,6 +41,31 @@ Dave (Rosy's friend)
 - Friends are added to the list in order—whoever is added first will be asked first.
 - Duplicate friends are not added. If John is also Alice's friend, we don’t add him again when Alice’s friends are listed.
 
+## Visual Representation of Relationship Graph
+
+```
+You --> Alice --> Rosy --> Dave
+  \           \
+   \           --> Dan
+    \
+     --> John --> Mary
+               \
+                --> Tom
+```
+
+- Each person is represented as a vertex (node).
+- Each relationship is represented as an edge (connection) between two vertices.
+
+**Vertices (Nodes)**: {You, Alice, John, Rosy, Dan, Dave, Mary, Tom}
+**Edges (Connections)**:
+You  	→ Alice
+You  	→ John
+Alice → Rosy
+Alice → Dan
+Rosy 	→ Dave
+John 	→ Mary
+John 	→ Tom
+
 ## Key principles of Breadth-First Search
 
 1. **Explores Level by Level** – BFS visits all neighbors of a node before moving to the next level of nodes. This ensures the shortest path.
@@ -58,22 +83,34 @@ Dave (Rosy's friend)
 ## Pseudocode
 
 ```
-BFS(graph, startNode)
-		searchingQueue = new QUEUE()
-		visitedNodes = new SET()
+BFS(graph, startNode):
+  searchingQueue = new QUEUE()
+  visitedNodes = new SET()
 
-		searchingQueue.enqueue(startNode)
-		visitedNodes.add(startNode)
+  searchingQueue.enqueue(startNode)
+  visitedNodes.add(startNode)
 
-		WHILE searchingQueue IS NOT empty
-				currentNode = searchingQueue.dequeue()
-				IF checkIfConditionMet(currentNode) 
-						return currentNode
-				
-				FOR EACH neighborNode of currentNode
-						IF not in visitedNodes
-								searchingQueue.enqueue(neighborNode)
-								visitedNodes.add(neighborNode)
+  WHILE searchingQueue IS NOT empty:
+		currentNode = searchingQueue.dequeue()
+
+		IF checkIfConditionMet(currentNode):
+			RETURN currentNode
 		
-		RETURN nothing
-```	
+		FOR EACH neighborNode IN graph[currentNode]:
+			IF neighborNode NOT IN visitedNodes:
+				searchingQueue.enqueue(neighborNode)
+				visitedNodes.add(neighborNode)
+	
+	RETURN null  # Indicating no node met the condition
+```
+
+## Data structure to store graph
+
+- The graph is stored using an Adjacency List (recommended for BFS).
+- A simple Adjacency List can be implemented using a hash table:
+  + Keys are nodes (vertices).
+  + Values are lists of neighboring nodes.
+
+## Runtime
+
+- O(V + E): V is number of vertex (node); E is number of edge (connection)
