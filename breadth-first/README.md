@@ -65,7 +65,9 @@ You --> Alice --> Rosy --> Dave
 - Each relationship is represented as an edge (connection) between two vertices.
 
 **Vertices (Nodes)**: {You, Alice, John, Rosy, Dan, Dave, Mary, Tom}
+
 **Edges (Connections)**:
+```
 You  	→ Alice
 You  	→ John
 Alice → Rosy
@@ -73,6 +75,7 @@ Alice → Dan
 Rosy 	→ Dave
 John 	→ Mary
 John 	→ Tom
+```
 
 ## Key principles of Breadth-First Search
 
@@ -92,11 +95,11 @@ John 	→ Tom
 
 ```
 BFS(graph, startNode):
-  searchingQueue = new QUEUE()
-  visitedNodes = new SET()
+	searchingQueue = new QUEUE()
+	visitedNodes = new SET()
 
-  searchingQueue.enqueue(startNode)
-  visitedNodes.add(startNode)
+	searchingQueue.enqueue(startNode)
+	visitedNodes.add(startNode)
 
   WHILE searchingQueue IS NOT empty:
 		currentNode = searchingQueue.dequeue()
@@ -119,6 +122,16 @@ BFS(graph, startNode):
   + Keys are nodes (vertices).
   + Values are lists of neighboring nodes.
 
-## Runtime
+## Time Complexity
 
-- O(V + E): V is number of vertex (node); E is number of edge (connection)
+O(V + E), where:
+- V represents the number of vertices (nodes) in the graph.
+- E represents the number of edges (connections) between vertices.
+
+## Why Not O(V * E)?
+
+Although BFS contains two nested loops, its complexity remains O(V + E) instead of O(V * E) because:
+
+- O(V) comes from the while loop, which ensures each node is visited only once.
+- O(E) comes from the for loop for examining edges, which ensures each edge is processed at most once.
+- BFS does not visit every node for every iteration of the inner loop. Instead, the inner loop only runs for the neighbors of the current node.

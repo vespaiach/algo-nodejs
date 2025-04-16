@@ -11,7 +11,7 @@ Implement dynamic array and support these apis:
 - **insert(i, x)**: takes an index and an element, and add the element at the index, shifting right any preexisting elements at index i or greater.
 - **remove(x)**: takes in an element and removes the first instance of that element in the array. Return the index of that element was at or -1 if the element was not found.
 
-## Runtime
+## Time Complexity
 
 - append(x): O(1) Amortized time
 - get(x): O(1)

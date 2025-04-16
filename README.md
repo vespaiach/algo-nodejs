@@ -1,6 +1,6 @@
-## Algorithm in NodeJS
+## Algorithm in Node.js
 
-This is a playround for algorithm with NodeJS
+This is a playground for exploring algorithms in Node.js.
 
 ## Problems
 
