@@ -17,15 +17,6 @@ export default class DynamicArray {
     this.#_size++
   }
 
-  #doubleArrayCapacity() {
-    this.#_capacity *= 2
-    const tempArray = this.#createAndInitArray(this.#_capacity)
-    for (let i = 0; i < this.#_size; i++) {
-      tempArray[i] = this.__base[i]
-    }
-    this.__base = tempArray
-  }
-
   get(i) {
     if (i < 0 || i >= this.#_size) {
       return undefined
@@ -118,6 +109,15 @@ export default class DynamicArray {
 			this.pop(foundIndex)
 		}
 	}
+
+  #doubleArrayCapacity() {
+    this.#_capacity *= 2
+    const tempArray = this.#createAndInitArray(this.#_capacity)
+    for (let i = 0; i < this.#_size; i++) {
+      tempArray[i] = this.__base[i]
+    }
+    this.__base = tempArray
+  }
 
   #ensureNumber(i) {
     if (typeof i !== 'number') {
