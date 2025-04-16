@@ -6,27 +6,34 @@ Imagine you need help fixing your bike. You start by asking your friends if they
 
 1. Start with your friends list:
 
+```
 Alice
 John
+```
 
 2. Ask Alice, but she doesn't know. Add Alice's friends to the list:
 
+```
 ~~Alice~~
 John
 Rosy (Alice's friend)
 Dan (Alice's friend)
+```
 
 3. Ask John, but he also doesn't know. Add John's friends to the list:
 
+```
 ~~Alice~~
 ~~John~~
 Rosy (Alice's friend)
 Dan (Alice's friend)
 Mary (John's friend)
 Tom (John's friend)
+```
 
 4. Ask Rosy (Alice's friend), but she doesn't know. Add Rosy's friend to the list:
 
+```
 ~~Alice~~
 ~~John~~
 ~~Rosy~~
@@ -34,6 +41,7 @@ Dan (Alice's friend)
 Mary (John's friend)
 Tom (John's friend)
 Dave (Rosy's friend)
+```
 
 5. Ask Dan (Alice's friend), and he knows how to fix your bike! Stop searching.
 
