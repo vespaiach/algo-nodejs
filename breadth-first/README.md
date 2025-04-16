@@ -101,7 +101,7 @@ BFS(graph, startNode):
 	searchingQueue.enqueue(startNode)
 	visitedNodes.add(startNode)
 
-  WHILE searchingQueue IS NOT empty:
+  	WHILE searchingQueue IS NOT empty:
 		currentNode = searchingQueue.dequeue()
 
 		IF checkIfConditionMet(currentNode):
