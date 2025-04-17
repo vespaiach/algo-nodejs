@@ -50,22 +50,23 @@ Explanation:
 
 ## Pseudocode
 
+```
 solvePuzzle(board)
-  movesQueue = QUEUE()
-  checkedMoves = SET()
+   movesQueue = QUEUE()
+   checkedMoves = SET()
 
-  movesQueue.enqueue({ board, step })
-  checkedMoves.add(board)
+   movesQueue.enqueue({ board, step })
+   checkedMoves.add(board)
 
-  WHILE movesQueue is not EMPTY
-    currentMove = movesQueue.dequeue
-    IF checkIfPuzzleSolved(currentMove)
-      return currentMove.step
+   WHILE movesQueue is not EMPTY
+     currentMove = movesQueue.dequeue
+     IF checkIfPuzzleSolved(currentMove)
+        return currentMove.step
 
-    FOR EACH nextBoard in findAllValidNextMoves(currentMove)
-      IF not checkedMoves.has(nextBoard)
-        movesQueue.enqueue({ nextBoard, step + 1 })
-        checkedMoves.add(nextBoard)
+     FOR EACH nextBoard in findAllValidNextMoves(currentMove)
+        IF not checkedMoves.has(nextBoard)
+           movesQueue.enqueue({ nextBoard, step + 1 })
+           checkedMoves.add(nextBoard)
   
-  return -1
-
+   return -1
+```
